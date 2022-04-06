@@ -1,23 +1,19 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import { TextInfo } from './components/TextInfo';
 import './App.css';
 
 function App() {
+  const [ text, setText ] = useState("");
+  const handleChange = (event) => {
+    setText(event.target.value);
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Word Count</h1>
+      <p className="tagline">Write or paste your text below to see information about it.</p>
+      <textarea className="TextInput" placeholder="Enter you text here..." onChange={handleChange} />
+      <TextInfo text={text} />
     </div>
   );
 }
