@@ -15,8 +15,22 @@ h1 {
   font-weight: 600;
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+}
+
+.textAndFilters {
+  width: 90vw;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+}
+
 textarea {
-  width: 75vw;
+  width: max(500px, 60vw);
   height: 55vh;
   padding: 16px;
   border-width: 1px;
@@ -27,4 +41,31 @@ textarea {
   font-size: 14px;
   font-family: 'Montserrat', sans-serif;
   resize: vertical;
+}
+
+.Filters {
+  display: flex;
+  flex-direction: column;
+  /* flex-wrap: wrap; */
+  justify-content: flex-start;
+}
+
+@media (max-width: 770px) {
+  main {
+    flex-direction: column-reverse;
+  }
+
+  .Filters {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+.FilterButton {
+  width: 120px;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 10px;
+  font-family: 'Montserrat', sans-serif;
 }

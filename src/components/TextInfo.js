@@ -1,9 +1,12 @@
 import React from 'react';
 
+
 export function TextInfo(props) {
-  let words = props.text.split(/\s/);
-  let numWords = words.filter(word => word.length !== 0).length;
+  let words = props.text.split(/\s/).filter(word => props.currentFilter["regex"].test(word));
+  let numWords = words.length;
   return (
-    <p>NumWords: {numWords}</p>
+    <div className="TextInfo">
+      <p>NumWords: {numWords}</p>
+    </div>
   )
 }
